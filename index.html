@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="nameOfModule" ng-controller="nameOfController">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ 'Angular Js Tutorial' }}</title>
+    <!-- Angular Js added with cdn -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> -->
+    <!-- Angular Js added with offline -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/custom.js"></script>
+    <style>
+        .mp {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" ng-model="number">
+    {{ "You have typed: " + number }} <br>
+
+    <b><span ng-bind="number"></span></b>
+
+    <!-- Creating variable -->
+    <div ng-init=" fname='vikash'; lname='maskhare'; age='22'; ">
+        {{ fname + " " + lname + " " + age }}
+    </div>
+
+    <!-- Creating array -->
+    <div ng-init=" details = ['Ahmedabad', 'Bhopal', 'indore'] ">
+        <p ng-repeat=" item in details ">{{ item }}</p>
+    </div>
+
+    <!-- Using variable of scope -->
+    <p>{{whatIsScope}}</p>
+
+    <!-- Using function of scope -->
+    <!-- {{funcAddedToScope()}} -->
+
+    <!-- Custom directive Tag -->
+    <br>
+    <hindi-tutorials></hindi-tutorials>
+
+    <div class="mp" hindi-tutorials></div>
+
+    <!-- Filter -->
+    <p>{{ "| is a filter" | uppercase }}</p>
+
+    <!-- Sorting with filter -->
+    <!-- <p ng-repeat=" clr in arrClr | orderBy: clr">{{ clr }}</p> -->
+
+    <!-- Searching with filter -->
+    Search: <input type="text" ng-model="searchV">
+    <p ng-repeat=" clr in arrClr | filter: searchV">{{ clr }}</p>
+
+    <!-- Click event -->
+    <button ng-click="afterClick()">Click</button><br>
+
+    Your time: {{time}}
+</body>
+</html>

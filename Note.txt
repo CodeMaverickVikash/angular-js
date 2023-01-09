@@ -1,0 +1,14 @@
+Directives in angular js
+
+ng-app
+
+how to use module with html
+
+to call library of mudule when we use square bracket of module
+
+Controller is collection of directives, services and filters
+
+To create Controller need to first create module
+
+
+custom directive tag and custom service
